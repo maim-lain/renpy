@@ -51,4 +51,60 @@ It's actually pretty rare that you'll need to use hide. Show can be used when a 
 <br>
 
 #### Transition
-https://www.renpy.org/doc/html/quickstart.html#transitions
+Above, pictures pop in and out instantaneously. Ren'Py supports transitions that allow effects to be applied when what is being shown changes.
+
+Transitions change what is displayed from what it was at the end of the last interaction (dialogue, menu, or transition – among other statements) to what it looks like after scene, show, and hide statements have run.
+```renpy
+    scene bg meadow
+    with fade
+
+    m "Hey... Umm..."
+
+    show sylvie green smile
+    with dissolve
+```
+
+The with statement takes the name of a transition to use. The most common one is dissolve which dissolves from one screen to the next. Another useful transition is fade which fades the screen to black, and then fades in the new screen.
+
+When a transition is placed after multiple scene, show, or hide statements, it applies to them all at once. If you were to write:
+```renpy
+    scene bg meadow
+    show sylvie green smile
+    with dissolve
+```
+
+Both the "bg meadow" and "sylvie green smile" images would be dissolved in at the same time. To dissolve them in one at a time, you need to write two with statements:
+```renpy
+    scene bg meadow
+    with dissolve
+    show sylvie green smile
+    with dissolve
+```
+
+This first dissolves in the meadow, and then dissolves in sylvie. If you wanted to instantly show the meadow, and then show sylvie, you could write:
+```renpy
+    scene bg meadow
+    with None
+    show sylvie smile
+    with dissolve
+```
+
+Here, None is used to indicate a special transition that updates Ren'Py's idea of what the prior screen was, without actually showing anything to the player.
+
+<br>
+
+#### Positions
+By default, images are shown centered horizontally, and with their bottom edge touching the bottom of the screen.
+```renpy
+     show sylvie green smile at right
+```
+
+To do this repositioning, add an at clause to a show statement. The at clause takes a position, and shows the image at that position. Ren'Py includes several predefined positions:
+- left for the left side of the screen
+- right for the right side
+- center for centered horizontally (the default)
+- truecenter for centered horizontally and vertically
+
+<br>
+
+#### Music
