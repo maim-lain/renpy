@@ -62,9 +62,50 @@ label subroutine(count=1):
 <br>
 <br>
 
-#### Jump Statement
+#### Python
+```renpy
+python:
+    flag = True
+    x = 10
+    
+$ flag = True
+$ x = 10
+```
+
+#### Init
+The init python statement runs Python at initialization time, before the game loads. Among other things, this can be used to define classes and functions, or to initialize styles, config variables, or persistent data.
+```renpy
+init python:
+    if persistent.endings is None:
+        persistent.endings = set()
+
+init 1 python:
+    # The bad ending is always unlocked.
+    persistent.endings.add("bad_ending")
+```
+
+Init python statements also take the hide or in clauses.
+
+Variables that have their value set in an init python block are not saved, loaded, and do not participate in rollback. Therefore, these variables should not be changed after init is over.
 
 
+<br>
+<br>
+
+#### While Statement
+```repny
+$ count = 10
+
+while count > 0:
+    "T-minus [count]."
+    $ count -= 1
+
+"Liftoff!"
+```
+Ren'Py does not have continue, break, or for statements. Continue and break statements can be replaced by jumps to labels placed before or after the while loop, respectively. The first example of a while loop, above, shows how a while loop can replace a for statement.
+
+<br>
+<br>
 
 The start label is special, as it's where Ren'Py scripts begin running when the user clicks "Start Game" on the main menu.
 
@@ -280,7 +321,6 @@ While some games can be made by only using the statements given above, other gam
 
 To initialize a variable, use the default statement, before label start.
 ```renpy
-# True if the player has decided to compare a VN to a book.
 default book = False
 
 label book:
