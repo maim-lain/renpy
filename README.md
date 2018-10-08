@@ -128,3 +128,67 @@ Sound effects can be played with the play sound statement. Unlike music, sound e
 ```renpy
     play sound "effect.ogg"
 ```
+
+<br>
+
+#### Pause Statement
+The pause statement causes Ren'Py to pause until the mouse is clicked. If a number is given, the pause will end when that number of seconds have elapsed.
+```renpy
+pause
+
+pause 3.0
+```
+
+<br>
+
+#### Ending the Game
+You can end the game by running the return statement, without having called anything. Before doing this, it's best to put something in the game that indicates that the game is ending, and perhaps giving the user an ending number or ending name.
+```renpy
+    "Good Ending."
+    return
+```
+That's all you need to make a kinetic novel, a game without any choices in it. Now, we'll look at what it takes to make a game that presents menus to the user.
+
+<br>
+
+#### Menus, Labels, and Jumps
+The menu statement lets presents a choice to the player:
+```renpy
+menu:
+    "It's a videogame.":
+        jump game
+    "It's an interactive book.":
+        jump book
+
+label game:
+    m "It's a kind of videogame you can play on your computer or a console."
+    jump marry
+
+label book:
+    m "It's like an interactive book that you can read on a computer or a console."
+    jump marry
+
+label marry:
+    "And so, we become a visual novel creating duo."
+```
+In this example, each of the two menu choices runs a single jump statement. The jump statement transfers control to the a label defined using the label statement. After a jump, script statements following the label are run.
+
+If there is no jump statement at the end of the block associated with the label, Ren'Py will continue on to the next statement. The last jump statement here is technically unnecessary, but is included since it makes the flow of the game clearer.
+
+<br>
+
+#### Supporting Flags using the Default, Python and If Statements
+While some games can be made by only using the statements given above, other games requires data to be stored and recalled later. For example, it might make sense for a game to remember a choice a player has made, return to a common section of the script, and act on the choice later. This is one of the reasons why Ren'Py has embedded Python support.
+
+To initialize a variable, use the default statement, before label start.
+```renpy
+# True if the player has decided to compare a VN to a book.
+default book = False
+
+label book:
+    $ book = True
+    m "It's like an interactive book that you can read on a computer or a console."
+    jump marry
+```
+Lines beginning with a dollar-sign are interpreted as Python statements. The assignment statement here assigns a value to a variable. Ren'Py has support for other ways of including Python, such as a multi-line Python statement, that are discussed in other sections of this manual.
+
