@@ -45,3 +45,10 @@ For example, the following files, placed in the images directory, define the fol
 Images can be placed in subdirectories (subfolders) under the images directory. The directory name is ignored and only the filename is used to define the image name.
 
 Hide Statement. Ren'Py also supports a hide statement, which hides the given image.
+
+It's actually pretty rare that you'll need to use hide. Show can be used when a character is changing emotions, while scene is used when everyone leaves. You only need to use hide when a character leaves and the scene stays the same.
+
+<br>
+
+#### Transition
+https://www.renpy.org/doc/html/quickstart.html#transitions
