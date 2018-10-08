@@ -5,6 +5,67 @@
 - artstation animations
 
 
+
+
+<br>
+
+#### Labels Statement
+Local labels logically reside inside the scope of the global label they are declared in. To declare a local label, prefix its name with a period .. For example:
+```renpy
+label global_label:
+    "Inside a global label.."
+    
+    label .local_name:
+        "inside a local label."
+```
+
+<br>
+
+Local labels can be referenced directly inside the same global label they are declared in or by their full name, consisting of global and local name parts:
+```renpy
+label another_global:
+    "Let's jump inside a local label located somewhere else."
+    jump global_label.local_name
+```
+
+<br>
+<br>
+
+#### Jump Statement
+The jump statement is used to transfer control to the given label.
+
+If the expression keyword is present, the expression following it is evaluated, and the string so computed is used as the label name of the statement to jump to. If the expression keyword is not present, the label name of the statement to jump to must be explicitly given.
+
+Unlike call, jump does not push the next statement onto a stack. As a result, there's no way to return to where you've jumped from.
+
+<br>
+<br>
+
+#### Call Statement
+The call statement is used to transfer control to the given label. It also pushes the next statement onto the call stack, allowing the return statement to return control to the statement following the call.
+
+If the optional from clause is present, it has the effect of including a label statement with the given name as the statement immediately following the call statement. An explicit label helps to ensure that saved games with return stacks can return to the proper place when loaded on a changed script.
+```renpy
+e "First, we will call a subroutine."
+call subroutine
+call subroutine(2)
+call expression "subroutine" pass (count=3)
+# ...
+
+label subroutine(count=1):
+    e "I came here [count] time(s)."
+    e "Next, we will return from the subroutine."
+
+    return
+```
+
+<br>
+<br>
+
+#### Jump Statement
+
+
+
 The start label is special, as it's where Ren'Py scripts begin running when the user clicks "Start Game" on the main menu.
 
 #### Character
@@ -12,6 +73,29 @@ The start label is special, as it's where Ren'Py scripts begin running when the 
 define m = Character('Me', color="#c8c8ff")
 ```
 
+<br>
+<br>
+
+#### Special Characters
+- nvl
+ - A kind of Character that causes dialogue to be displayed in NVL-Mode, with multiple lines of text on the screen at once.
+- centered
+  - A character that causes what it says to be displayed centered, in the middle of the screen, outside of any window.
+- extend
+  - A character that causes the last character to speak to say a line of dialogue consisting of the last line of dialogue spoken and the dialogue given to extend. This can be used to have the screen change over the course of dialogue.
+
+For example:
+```renpy
+# Show the first line of dialogue, wait for a click, change expression, and show
+# the rest.
+
+show eileen concerned
+e "Sometimes, I feel sad."
+show eileen happy
+extend " But I usually quickly get over it!"
+```
+
+<br>
 <br>
 
 #### Images
@@ -50,18 +134,32 @@ It's actually pretty rare that you'll need to use hide. Show can be used when a 
 
 <br>
 
+```renpy
+label start:
+    e mad "I'm a little upset at you."
+    e happy "But it's just a passing thing."
+```
+is equivalent to:
+```renpy
+label start:
+    show eileen mad
+    e "I'm a little upset at you."
+    show eileen happy
+    e "But it's just a passing thing."
+```
+
+<br>
+
 #### Transition
 Above, pictures pop in and out instantaneously. Ren'Py supports transitions that allow effects to be applied when what is being shown changes.
 
 Transitions change what is displayed from what it was at the end of the last interaction (dialogue, menu, or transition – among other statements) to what it looks like after scene, show, and hide statements have run.
 ```renpy
-    scene bg meadow
-    with fade
+    scene bg meadow with fade
 
     m "Hey... Umm..."
 
-    show sylvie green smile
-    with dissolve
+    show sylvie green smile with dissolve
 ```
 
 The with statement takes the name of a transition to use. The most common one is dissolve which dissolves from one screen to the next. Another useful transition is fade which fades the screen to black, and then fades in the new screen.
