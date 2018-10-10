@@ -1,9 +1,15 @@
-# Ren'Py Dating Sim
+# Ren'Py Dating Sim Tutorial - Lain
+
+<br>
+
+There's an easy way, and a hard way to code a 'dating sim' style game in Ren'Py. Almost every game that I've seen does it the hard way, so I'm going to explain how to do it properly.
+
+---
 
 <br>
 
 ## The Wrong Way
-There's an easy way, and a hard way to code a 'dating sim' style game in Ren'Py. Almost every game that I've seen does it the hard way, so I'm going to explain how to do it properly. But first, let's look at the wrong way to code a game:
+First, let's look at the wrong way to code a game:
 ```renpy
 # Do NOT code your game like this.
 
