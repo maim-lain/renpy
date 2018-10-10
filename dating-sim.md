@@ -2,7 +2,7 @@
 
 <br>
 
-### The Wrong Way
+## The Wrong Way
 There's an easy way, and a hard way to code a 'dating sim' style game in Ren'Py. Almost every game that I've seen does it the hard way, so I'm going to explain how to do it properly. But first, let's look at the wrong way to code a game:
 ```renpy
 # Do NOT code your game like this.
@@ -62,7 +62,7 @@ default rebecca = Girl("Rebecca", r_events)
 <br>
 <br>
 
-### The Right Way
+## The Right Way
 The way that this is done is by creating a Girl class that will contain all the stats and logic for a girl character. By using a class we will only need to write everything once instead of rewriting/copy-pasting all the code for every single character.
 ```python
 class Girl():
@@ -75,6 +75,29 @@ class Girl():
 
 <br>
 
+In the constructor you will want to add all the fields that make up the information about a girl. For example: her relationship level, location (if it's an open world game), the relationship event that will occur when you interact with her, etc. In this example the only arguments that will need to be passed when creating a Girl object is her name and the list of event label names.
+```renpy
+def __init__(self, name, event_list):
+    self.name = name
+    self.level = 1
+    self.location = "room"
+    self.event_list = event_list
+    self.current_event = event_list[1]
+```
+
+<br>
+
+Next you'll probably want to add a method to the class that will level up a girl and set her next event instead of creating level_up labels for each girl.
+```renpy
+def level_up(self):
+    if self.level <= 5:
+        self.level += 1
+    self.current_event = self.event_list[self.level]
+```
+
+<br>
+
+Once you're done the Girl class should look like this.
 ```renpy
 init python:
     class Girl():
@@ -89,4 +112,17 @@ init python:
             if self.level <= 5:
                 self.level += 1
             self.current_event = self.event_list[self.level]
+```
+
+<br>
+
+Instantiating the Girls:
+```renpy
+default a_events = ["null", "a_event_1", "a_event_2", "a_event_3"]
+default h_events = ["null", "h_event_1", "h_event_2", "h_event_3"]
+default r_events = ["null", "r_event_1", "r_event_2", "r_event_3"]
+
+default alice = Girl("Alice", a_events)
+default heather = Girl("Heather", h_events)
+default rebecca = Girl("Rebecca", r_events)
 ```
