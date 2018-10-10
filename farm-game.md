@@ -8,7 +8,7 @@ The main way you earn gold in Four Elements Trainer - Book 2 is by managing an '
 
 <br>
 
-### Create the class:
+### Creating the class:
 First I created a class that represents the cows that keeps track of whether they are pregnant and how long they've been pregnant.
 ```renpy
 class Cow():
