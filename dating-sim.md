@@ -67,7 +67,6 @@ default rebecca = Girl("Rebecca", r_events)
 
 <br>
 <br>
-<br>
 
 ## The Right Way
 The way that this is done is by creating a Girl class that will contain all the stats and logic for a girl character. By using a class we will only need to write everything once instead of rewriting/copy-pasting all the code for every single character.
