@@ -66,7 +66,10 @@ The way this is done is by creating a Girl class that will contain all the stats
 ```python
 class Girl():
     def __init__(self):
-        # this is an empty Girl class.
+        # Constructor
+
+    # This is an empty Girl class.
+    # All a girl's stats and everything about her will go here.
 ```
 
 <br>
