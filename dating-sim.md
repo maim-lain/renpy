@@ -2,7 +2,7 @@
 
 <br>
 
-#### The Wrong Way
+### The Wrong Way
 There's an easy way, and a hard way to code a 'dating sim' style game in Ren'Py. Almost every game that I've seen does it the hard way, so I'm going to explain how to do it properly. But first, let's look at the wrong way to code a game:
 ```renpy
 # Do NOT code your game like this.
@@ -65,7 +65,9 @@ default rebecca = Girl("Rebecca", r_events)
 ```
 
 <br>
+<br>
 
+### The Right Way
 The way this is done is by creating a Girl class that will contain all the stats and logic, and we will only need to write everything once instead of rewriting everything for every single character.
 ```python
 class Girl():
