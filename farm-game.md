@@ -28,7 +28,7 @@ class Cow():
 <br>
 
 ### Buying cows:
-Next is the function that allows you to buy cows and sets the type of cow.
+Next is the function that allows you to buy different types of cows.
 ```renpy
 def add_cow(type):
     global cow_list
