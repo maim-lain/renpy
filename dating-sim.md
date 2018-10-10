@@ -116,7 +116,7 @@ init python:
 
 <br>
 
-Instantiating the Girls:
+Instantiating the girls is now super simple and only requires their name and a list of their relationship event label names.
 ```renpy
 default a_events = ["null", "a_event_1", "a_event_2", "a_event_3"]
 default h_events = ["null", "h_event_1", "h_event_2", "h_event_3"]
@@ -125,4 +125,46 @@ default r_events = ["null", "r_event_1", "r_event_2", "r_event_3"]
 default alice = Girl("Alice", a_events)
 default heather = Girl("Heather", h_events)
 default rebecca = Girl("Rebecca", r_events)
+```
+
+<br>
+
+The code for the game is now super simple and everything about a girl character can be accessed directly from her object instead of a dozen different variables and labels.
+
+<br>
+<br>
+<br>
+
+## Full Example Game
+Finally here's an example of how you would use a girl's fields and methods in a real game.
+```renpy
+label start:
+    jump heathers_room
+
+
+label heathers_room:
+    "You enter [heather.name]'s room. Her relationship level is [heather.level]."
+
+    if heather.location == "room":
+        menu:
+            "Would you like to hang out with Heather?"
+            "Yes":
+                jump expression heather.current_event
+            "No":
+                return
+    else:
+        "Me" "Looks like no one is here. Heather must be at [heather.location]."
+        return
+
+
+label h_event_1:
+    "You introduce yourself to Heather."
+    $ heather.level_up()
+    jump heathers_room
+
+label h_event_2:
+    "Heather" "Nice to meet you again. I have to go to work now though."
+    $ heather.level_up()
+    $ heather.location = "work"
+    jump heathers_room
 ```
