@@ -62,7 +62,12 @@ default rebecca = Girl("Rebecca", r_events)
 
 <br>
 
-The way this is done is by creating a Girl class that will contain all the stats and logic, and we will only need to write everything once instead of rewriting everything for **every.single.character.**
+The way this is done is by creating a Girl class that will contain all the stats and logic, and we will only need to write everything once instead of rewriting everything for every single character.
+```python
+class Girl():
+    def __init__(self):
+        # this is an empty Girl class.
+```
 
 <br>
 
