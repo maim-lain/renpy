@@ -88,7 +88,7 @@ def __init__(self, name, event_list):
 
 <br>
 
-Next you'll want to add a method to the class that will level up a girl and set her next event, instead of creating long level_up labels for each girl.
+Next you'll want to add a method to the class that will level up a girl and set her next event, instead of creating verbose level_up labels for each girl.
 ```renpy
 def level_up(self):
     if self.level <= 5:
@@ -138,8 +138,8 @@ The code for the game is now simple, short, and everything about a character can
 <br>
 <br>
 
-## Full Example Game
-Finally here's an example of how you would use a girl's fields and methods in a real game.
+## Example Game
+Finally here's an example of how you would use all of a girl's fields and methods in a game.
 ```renpy
 label start:
     jump heathers_room
