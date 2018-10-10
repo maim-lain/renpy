@@ -61,6 +61,7 @@ default rebecca = Girl("Rebecca", r_events)
 
 <br>
 <br>
+<br>
 
 ## The Right Way
 The way that this is done is by creating a Girl class that will contain all the stats and logic for a girl character. By using a class we will only need to write everything once instead of rewriting/copy-pasting all the code for every single character.
@@ -97,7 +98,7 @@ def level_up(self):
 
 <br>
 
-Once you're done the Girl class should look like this.
+The completed Girl class should look like this:
 ```renpy
 init python:
     class Girl():
@@ -129,7 +130,7 @@ default rebecca = Girl("Rebecca", r_events)
 
 <br>
 
-The code for the game is now super simple and everything about a girl character can be accessed directly from her object instead of a dozen different variables and labels.
+The code for the game is now simple, short, and everything about a character can be accessed directly from her object instead of a dozen different variables and labels.
 
 <br>
 <br>
