@@ -52,7 +52,7 @@ label rebecca_level_up:
 
 <br>
 
-It's a lot of lines, there's lots of repeated code, and making simple changes would be a lot of work. All of these are bad things. Now here's how to initialize all 3 of those girls and all their stats in only 3 lines of code:
+It's a lot of lines, there's lots of repeated code, and making simple changes would be a lot of work. All of these are bad things. Now here's how we'll be initializing all 3 of those girls and all their stats instead, and in only 3 lines of code:
 ```renpy
 default alice = Girl("Alice", a_events)
 default heather = Girl("Heather", h_events)
