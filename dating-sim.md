@@ -139,7 +139,7 @@ The code for the game is now simple, short, and everything about a character can
 <br>
 
 ## Example Game
-Finally here's an example of how you would use all of a girl's fields and methods in a game.
+Finally here's an example of how you would use a girl's fields and methods in a game.
 ```renpy
 label start:
     jump heathers_room
