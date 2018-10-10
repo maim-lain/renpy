@@ -7,7 +7,7 @@ In the main way you earn gold in Four Elements Trainer - Book 2 is by managing a
 <br>
 <br>
 
-#### The cow class:
+### The cow class:
 First I created a class that represents the cows that keeps track of whether they are pregnant and how long they've been pregnant.
 ```renpy
 class Cow():
@@ -24,7 +24,7 @@ class Cow():
 <br>
 <br>
 
-#### Buying cows:
+### Buying cows:
 Next is the function that allows you to buy cows and sets the type of cow.
 ```renpy
 def add_cow(type):
@@ -41,7 +41,7 @@ def add_cow(type):
 <br>
 <br>
 
-#### Checking a cow's type:
+### Checking a cow's type:
 When a player tries to breed cows we need to make sure that the player has the type of cow they want to breed first. This function will return a bool that will be used to determine if the player owns a type of cow.
 ```renpy
 def check_for_cow_type(type):
@@ -66,7 +66,7 @@ def check_for_cow_type(type):
 <br>
 <br>
 
-#### Breeding a cow:
+### Breeding a cow:
 Now we use the method from the Cow class to set a cow's pregnant field to true.
 ```renpy
 def breed_cow(type):
@@ -86,7 +86,7 @@ def breed_cow(type):
 <br>
 <br>
 
-#### Giving birth:
+### Giving birth:
 At the end of every day if a cow is pregnant the amount of days it has been pregnant will increase. If a cow has been pregnant for a certain amount of days it then gives birth and is no longer pregnant and can be bred again.
 ```renpy
 def end_day_cows():
@@ -107,7 +107,7 @@ def end_day_cows():
 <br>
 <br>
 
-#### Buying and breeding menus:
+### Buying and breeding menus:
 Here are the menus the player will use to select what type of cow they want to buy and which type of cow they want to breed.
 ```renpy
 label buy_cows:
@@ -138,7 +138,7 @@ label breed_cows:
 <br>
 <br>
 
-#### Starting the game:
+### Starting the game:
 Finally the last thing to do is initialize our variables and create a way for the player to interact with the farm.
 ```renpy
 default cow_list = []
@@ -170,7 +170,7 @@ label main_loop:
 <br>
 
 ## Full game example:
-Here is the code for the full game:
+Here is the code for the full game.
 ```renpy
 init python:
     class Cow():
