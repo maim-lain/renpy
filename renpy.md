@@ -1,4 +1,6 @@
-# Lain's Ren'Py Tutorials
+# Lain's RenPy Tutorials
+
+<br>
 
 [**Create a farm mini-game (Four Elements Trainer)**](https://github.com/maim-lain/renpy/blob/master/farm-game.md)
 
