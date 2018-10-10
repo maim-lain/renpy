@@ -6,8 +6,6 @@
 There's an easy way, and a hard way to code a 'dating sim' style game in Ren'Py. Almost every game that I've seen does it the hard way, so I'm going to explain how to do it properly. But first, let's look at the wrong way to code a game:
 ```renpy
 # Do NOT code your game like this.
-# You don't have to read all of this and if it hurts to
-# read this (it should) you can skip to the next section.
 
 default alice_level = 1
 default alice_location = "room"
