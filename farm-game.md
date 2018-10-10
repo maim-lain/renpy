@@ -1,10 +1,13 @@
-# Animal farm gameplay mechanics
+# Animal Farm Gameplay Mechanics - Lain
+
+- [Go back to tutorial list](https://github.com/maim-lain/renpy/blob/master/renpy.md)
 
 <br>
 
-In the main way you earn gold in Four Elements Trainer - Book 2 is by managing an 'animal farm' and breeding cows. I'll be explaining how I coded this gameplay mechanic that allows you to buy and breed animals.
+In the main way you earn gold in Four Elements Trainer - Book 2 is by managing an 'animal farm' and breeding cows. I'll be explaining how I coded this gameplay mechanic. The result is a complete gameplay system that has different types of cows and allows the player to buy and breed cows.
 
-<br>
+---
+
 <br>
 
 ### The cow class:
