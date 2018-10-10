@@ -2,7 +2,7 @@
 
 <br>
 
-The main way you earn gold in Four Elements Trainer - Book 2 is by managing an 'animal farm' and breeding cows. I'll be explaining how I coded this gameplay mechanic and the result is a complete gameplay system that has different types of cows and allows the player to buy and breed cows.
+The main way you earn gold in Four Elements Trainer: Book 2 is by managing an 'animal farm' and breeding cows. I'll be explaining how I coded this gameplay mechanic and the result is a complete gameplay system that has different types of cows and allows the player to buy and breed cows.
 
 ---
 
