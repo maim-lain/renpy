@@ -1,5 +1,6 @@
 # Ren'Py Dating Sim
 
+There's an easy way and a hard way to code a 'dating sim' style game in Ren'Py. Almost every game that I've seen does it the hard way, so I'm going to explain how to do it properly. But first, let's look at the wrong way to code a game:
 ```renpy
 # Do NOT code your game like this.
 
@@ -53,7 +54,7 @@ label rebecca_level_up:
 
 <br>
 
-Now here's how to do the exact same thing in only 3 lines of code:
+It's a lot of lines, there's lots of repeated code, and making simple changes would be a lot of work. All of these are bad things. Now here's how to do the exact same thing in only 3 lines of code:
 ```renpy
 default alice = Girl("Alice", a_events)
 default heather = Girl("Heather", h_events)
