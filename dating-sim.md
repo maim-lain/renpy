@@ -97,6 +97,7 @@ def level_up(self):
 ```
 
 <br>
+<br>
 
 The completed Girl class should look like this:
 ```renpy
@@ -115,6 +116,7 @@ init python:
             self.current_event = self.event_list[self.level]
 ```
 
+<br>
 <br>
 
 Instantiating the girls is now super simple and only requires their name and a list of their relationship event label names.
