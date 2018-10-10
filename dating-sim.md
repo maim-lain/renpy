@@ -53,10 +53,31 @@ label rebecca_level_up:
 
 <br>
 
-What if I told you that you could initialize a girl's stats and level_up logic in only 3 lines of code?
+Now here's how to do the exact same thing in only 3 lines of code:
 ```renpy
-# 
 default alice = Girl("Alice", a_events)
 default heather = Girl("Heather", h_events)
 default rebecca = Girl("Rebecca", r_events)
+```
+
+<br>
+
+The way this is done is by creating a Girl class that will contain all the stats and logic, and we will only need to write everything once instead of rewriting everything for **every.single.character.**
+
+<br>
+
+```renpy
+init python:
+    class Girl():
+        def __init__(self, name, event_list):
+            self.name = name
+            self.level = 1
+            self.location = "room"
+            self.event_list = event_list
+            self.current_event = event_list[1]
+
+        def level_up(self):
+            if self.level <= 5:
+                self.level += 1
+            self.current_event = self.event_list[self.level]
 ```
