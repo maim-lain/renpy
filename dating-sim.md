@@ -83,11 +83,10 @@ class Girl():
 
 In the constructor you will want to add all the fields that make up the information about a girl. For example: her relationship level, location (if it's an open world game), the relationship event that will occur when you interact with her, etc. In this example the only arguments that will need to be passed when creating a Girl object is their name.
 ```renpy
-def __init__(self, name, event_list):
+def __init__(self, name):
     self.name = name
     self.level = 1
     self.location = "room"
-    self.event_list = event_list
     self.current_event = f"{self.name[0].lower()}_event_{self.level}"
 ```
 
@@ -116,7 +115,7 @@ Next you'll want to add a method to the class that will level up a girl and set 
 def level_up(self):
     if self.level <= 5:
         self.level += 1
-    self.current_event = self.event_list[self.level]
+    self.current_event = f"{self.name[0].lower()}_event_{self.level}"
 ```
 
 <br>
@@ -126,11 +125,10 @@ The completed Girl class should look like this:
 ```renpy
 init python:
     class Girl():
-        def __init__(self, name, event_list):
+        def __init__(self, name):
             self.name = name
             self.level = 1
             self.location = "room"
-            self.event_list = event_list
             self.current_event = f"{self.name[0].lower()}_event_{self.level}"
 
         def level_up(self):
