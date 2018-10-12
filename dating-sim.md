@@ -99,8 +99,8 @@ self.current_event = f"{self.name[0].lower()}_event_{self.level}"
 
 # What it would evaluate to if you created a girl named Alice who is level 1:
 self.current_event = "a_event_1"
-
-
+```
+```renpy
 label a_event_1:
     # This is the 1st relationship event.
     
