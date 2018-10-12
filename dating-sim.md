@@ -81,7 +81,7 @@ class Girl():
 
 <br>
 
-In the constructor you will want to add all the fields that make up the information about a girl. For example: her relationship level, location (if it's an open world game), the relationship event that will occur when you interact with her, etc. In this example the only arguments that will need to be passed when creating a Girl object is 'name' and 'event_list'.
+In the constructor you will want to add all the fields that make up the information about a girl. For example: her relationship level, location (if it's an open world game), the relationship event that will occur when you interact with her, etc. In this example the only arguments that will need to be passed when creating a Girl object is their name.
 ```renpy
 def __init__(self, name, event_list):
     self.name = name
@@ -89,6 +89,24 @@ def __init__(self, name, event_list):
     self.location = "room"
     self.event_list = event_list
     self.current_event = f"{self.name[0].lower()}_event_{self.level}
+```
+
+<br>
+
+I'll try to explain the last line of code from the code above in more detail. The value of "Girl.current_event" is the label name of the relationship you will call when the player triggers an event. So your label names should be named used  the syntax below.
+```renpy
+# The code in the class:
+self.current_event = f"{self.name[0].lower()}_event_{self.level}
+
+# What it would evaluate to if you created a girl named Alice who is level 1:
+self.current_event = "a_event_1
+
+
+label a_event_1:
+    # This is the 1st relationship event.
+    
+label a_event_2:
+    # This is the 2nd relationship event.
 ```
 
 <br>
