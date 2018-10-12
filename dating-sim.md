@@ -142,7 +142,7 @@ init python:
 <br>
 <br>
 
-Instantiating the girls is now super simple and only requires their name and a list of their relationship event label names
+Instantiating the girls is now super simple and only requires their name.
 ```renpy
 default alice = Girl("Alice")
 default heather = Girl("Heather")
