@@ -88,7 +88,7 @@ def __init__(self, name, event_list):
     self.level = 1
     self.location = "room"
     self.event_list = event_list
-    self.current_event = f"{self.name[0].lower()}_event_{self.level}
+    self.current_event = f"{self.name[0].lower()}_event_{self.level}"
 ```
 
 <br>
@@ -96,10 +96,10 @@ def __init__(self, name, event_list):
 I'll try to explain the last line of code from the code above in more detail. The value of "Girl.current_event" is the label name of the relationship you will call when the player triggers an event. So your label names should be named used  the syntax below.
 ```renpy
 # The code in the class:
-self.current_event = f"{self.name[0].lower()}_event_{self.level}
+self.current_event = f"{self.name[0].lower()}_event_{self.level}"
 
 # What it would evaluate to if you created a girl named Alice who is level 1:
-self.current_event = "a_event_1
+self.current_event = "a_event_1"
 
 
 label a_event_1:
@@ -131,12 +131,12 @@ init python:
             self.level = 1
             self.location = "room"
             self.event_list = event_list
-            self.current_event = f"{self.name[0].lower()}_event_{self.level}
+            self.current_event = f"{self.name[0].lower()}_event_{self.level}"
 
         def level_up(self):
             if self.level <= 5:
                 self.level += 1
-            self.current_event = f"{self.name[0].lower()}_event_{self.level}
+            self.current_event = f"{self.name[0].lower()}_event_{self.level}"
 ```
 
 <br>
