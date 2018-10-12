@@ -60,9 +60,9 @@ label rebecca_level_up:
 
 It's a lot of lines, there's lots of repeated code, and making simple changes would be a lot of work. All of these are bad things. Now here's how we will be initializing all 3 of those girls and all their stats instead, and in only 3 lines of code:
 ```renpy
-default alice = Girl("Alice", a_events)
-default heather = Girl("Heather", h_events)
-default rebecca = Girl("Rebecca", r_events)
+default alice = Girl("Alice")
+default heather = Girl("Heather")
+default rebecca = Girl("Rebecca")
 ```
 
 <br>
@@ -88,7 +88,7 @@ def __init__(self, name, event_list):
     self.level = 1
     self.location = "room"
     self.event_list = event_list
-    self.current_event = event_list[1]
+    self.current_event = f"{self.name[0].lower()}_event_{self.level}
 ```
 
 <br>
@@ -113,26 +113,22 @@ init python:
             self.level = 1
             self.location = "room"
             self.event_list = event_list
-            self.current_event = event_list[1]
+            self.current_event = f"{self.name[0].lower()}_event_{self.level}
 
         def level_up(self):
             if self.level <= 5:
                 self.level += 1
-            self.current_event = self.event_list[self.level]
+            self.current_event = f"{self.name[0].lower()}_event_{self.level}
 ```
 
 <br>
 <br>
 
-Instantiating the girls is now super simple and only requires their name and a list of their relationship event label names.
+Instantiating the girls is now super simple and only requires their name and a list of their relationship event label names
 ```renpy
-default a_events = ["null", "a_event_1", "a_event_2", "a_event_3"]
-default h_events = ["null", "h_event_1", "h_event_2", "h_event_3"]
-default r_events = ["null", "r_event_1", "r_event_2", "r_event_3"]
-
-default alice = Girl("Alice", a_events)
-default heather = Girl("Heather", h_events)
-default rebecca = Girl("Rebecca", r_events)
+default alice = Girl("Alice")
+default heather = Girl("Heather")
+default rebecca = Girl("Rebecca")
 ```
 
 <br>
