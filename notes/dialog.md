@@ -2,8 +2,8 @@
 
 <br>
 
-- {text tag}
-- \[variable substitution\]
+- Text tag: { }
+- Variable substitution: \[ \]
 
 <br>
 <br>
