@@ -61,3 +61,9 @@ label book:
 ```
 Lines beginning with a dollar-sign are interpreted as Python statements. The assignment statement here assigns a value to a variable. Ren'Py has support for other ways of including Python, such as a multi-line Python statement, that are discussed in other sections of this manual.
 
+#### Disable Quick Menu
+```renpy
+# in screens.rpy change find and change to:
+
+default quick_menu = False
+```
