@@ -14,27 +14,26 @@ Ren'Py has the with statement, which allows effects to be applied when the scene
 ### Image
 An image is something that can be show to the screen using the show statement. An image consists of a name and a displayable. When the image is shown on a layer, the displayable associated with it is displayed on that layer.
 
-An image name consists of one or more names, separated by spaces. The first component of the image name is called the image tag. The second and later components of the name are the image attributes.
+The first word of the image name is called the image tag. The second and later words of the name are the image attributes.
 
-For example, take the image name mary beach night happy. The image tag is mary, while the image attributes are beach, night, and happy.
+For example: `mary beach night happy.` The image tag is mary, while the image attributes are beach, night, and happy.
 
-A displayable is something that can be shown on the screen. The most common thing to show is a static image, which can be specified by giving the filename of the image, as a string. In the example above, we might use "mary_beach_night_happy.png" as the filename. However, an image may refer to any displayable Ren'Py supports, not just static images. Thus, the same statements that are used to display images can also be used for animations, solid colors, and the other types of displayables.
+A displayable is something that can be shown on the screen. The most common thing to show is a static image, which can be specified by giving the filename of the image, as a string. In the example above, we might use "mary_beach_night_happy.png" as the filename. However, an image may refer to any displayable Ren'Py supports. The same statements that are used to display images can also be used for animations, solid colors, and the other types of displayables.
 
 <br>
 
-### Layer
+### Layer (ignore)
 A layer is a list of displayables that are shown on the screen. Ren'Py supports multiple layers, including user-defined layers. The order of the layers is fixed within a game (controlled by the config.layers variable), while the order of displayables within a layer is controlled by the order in which the scene and show statements are called, and the properties given to those statements.
 
 The following layers are defined as part of Ren'Py:
-
-master
-    This is the default layer that is used by the scene, show, and hide statements. It's generally used for backgrounds and character sprites.
-transient
-    The default layer used by ui functions. This layer is cleared at the end of each interaction.
-screens
-    This layer is used by the screen system.
-overlay
-    The default layer used when a ui function is called from within an overlay function. This layer is cleared when an interaction is restarted.
+- master
+  - This is the default layer that is used by the scene, show, and hide statements. It's generally used for backgrounds and character sprites.
+- transient
+  - The default layer used by ui functions. This layer is cleared at the end of each interaction.
+- screens
+  - This layer is used by the screen system.
+- overlay
+  - The default layer used when a ui function is called from within an overlay function. This layer is cleared when an interaction is restarted.
 
 Additional layers can be defined by updating config.layers, and the various other layer-related config variables. Using renpy.layer_at_list(), one or more transforms can be applied to a layer.
 
