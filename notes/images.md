@@ -99,31 +99,22 @@ The show statement takes the following properties:
 - at
   - The at property takes one or more comma-separated simple expressions. Each expression must evaluate to a transform. The transforms are applied to the image in left-to-right order.
   - If no at clause is given, Ren'Py will retain any existing transform that has been applied to the image. If no transform exists, the image will be displayed using the default transform.
-behind
+- behind
   - Takes a comma-separated list of one or more names. Each name is taken as an image tag. The image is shown behind all images with the given tags that are currently being shown.
-onlayer
+- onlayer
   - Takes a name. Shows the image on the named layer.
-- zorder
-  - Takes an integer. The integer specifies the relative ordering of images within a layer, with larger numbers being closer to the user. This isn't generally used by Ren'Py games, but can be useful when porting visual novels from other engines.
 
-Assuming we have the following images defined:
 ```renpy
 image mary night happy = "mary_night_happy.png"
 image mary night sad = "mary_night_sad.png"
 image moon = "moon.png"
-```
 
-<br>
 
-Some example show statements are:
-```renpy
+# Some example show statements would be:
+
+
 # Basic show.
 show mary night sad
-
-# Since 'mary night happy' is showing, the following statement is
-# equivalent to:
-# show mary night happy
-show mary happy
 
 # Show an image on the right side of the screen.
 show mary night happy at right
@@ -146,19 +137,47 @@ A variant of the show statement replaces the image name with the keyword express
 For example: `show expression "moon.png" as moon`
 
 #### Show Layer
-The show layer statement allows one to apply a transform or ATL transform to an entire layer (such as "master"), using syntax like:
-
+The show layer statement allows one to apply a transform or ATL transform to an entire layer (such as "master") by using syntax like:
+```renpy
 show layer master at flip
-
+```
 or:
-
+```renpy
 show layer master:
     xalign 0.5 yalign 0.5 rotate 180
-
+```
 To stop applying transforms to the layer, use:
-
+```renpy
 show layer master
+```
 
+<br>
+<br>
+
+## Scene Statement
+The scene statement removes all displayables from a layer, and then shows an image on that layer. It consists of the keyword scene, followed by an image name, followed by zero or more properties. The image is shown in the same way as in the show statement, and the scene statement takes the same properties as the show statement. Like the show statement, the scene statement can take expressions instead of image names.
+
+The scene statement is often used to show an image on the background layer. For example: `scene bg beach`
+
+Clearing a layer. When the image name is omitted entirely, the scene statement clears all displayables from a layer without showing another displayable. `scene`
+
+<br>
+<br>
+
+## Hide Statement
+The hide statement removes an image from a layer. It consists of the keyword hide, followed by an image name. The hide statement takes the image tag from the image name, and then hides any image on the layer with that tag.
+
+Hide statements are rarely necessary. If a sprite represents a character, then a hide statement is only necessary when the character leaves the scene. When the character changes her emotion, it is preferable to use the show statement instead, as the show statement will automatically replace an image with the same tag.
+
+<br>
+<br>
+
+## With Statement
+The with statement is used to apply a transition effect when the scene is changed, making showing and hiding images less abrupt. The with statement consists of the keyword with, followed by a simple expression that evaluates either to a transition object or the special value None.
+
+The transition effect is applied between the contents of the screen at the end of the previous interaction (with transient screens and displayables hidden), and the current contents of the scene, after the show and hide statements have executed.
+
+The with statement causes an interaction to occur. The duration of this interaction is controlled by the user, and the user can cause it to terminate early.
 
 
 
@@ -197,10 +216,6 @@ For example, the following files, placed in the images directory, define the fol
 - "sylvie green surprised.png" -> sylvie green surprised
 
 Images can be placed in subdirectories (subfolders) under the images directory. The directory name is ignored and only the filename is used to define the image name.
-
-Hide Statement. Ren'Py also supports a hide statement, which hides the given image.
-
-It's actually pretty rare that you'll need to use hide. Show can be used when a character is changing emotions, while scene is used when everyone leaves. You only need to use hide when a character leaves and the scene stays the same.
 
 <br>
 
