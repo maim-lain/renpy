@@ -4,7 +4,10 @@
 <br>
 
 [**Labels and Control Flow**](https://github.com/maim-lain/renpy/blob/master/notes/labels.md)
+
 [**Dialog and Narration**](https://github.com/maim-lain/renpy/blob/master/notes/dialog.md)
+
+[**Displaying Images**](https://github.com/maim-lain/renpy/blob/master/notes/images.md)
 
 <br>
 
@@ -49,28 +52,6 @@ while count > 0:
 "Liftoff!"
 ```
 Ren'Py does not have continue, break, or for statements. Continue and break statements can be replaced by jumps to labels placed before or after the while loop, respectively. The first example of a while loop, above, shows how a while loop can replace a for statement.
-
-<br>
-<br>
-
-#### Special Characters
-- nvl
- - A kind of Character that causes dialogue to be displayed in NVL-Mode, with multiple lines of text on the screen at once.
-- centered
-  - A character that causes what it says to be displayed centered, in the middle of the screen, outside of any window.
-- extend
-  - A character that causes the last character to speak to say a line of dialogue consisting of the last line of dialogue spoken and the dialogue given to extend. This can be used to have the screen change over the course of dialogue.
-
-For example:
-```renpy
-# Show the first line of dialogue, wait for a click, change expression, and show
-# the rest.
-
-show eileen concerned
-e "Sometimes, I feel sad."
-show eileen happy
-extend " But I usually quickly get over it!"
-```
 
 <br>
 <br>
