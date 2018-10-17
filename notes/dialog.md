@@ -2,8 +2,8 @@
 
 <br>
 
-- { } is for a text tag
-- \[\] is for variable substitution
+- {text tag}
+- \[variable substitution\]
 
 <br>
 <br>
