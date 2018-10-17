@@ -9,51 +9,8 @@
 
 [**Displaying Images**](https://github.com/maim-lain/renpy/blob/master/notes/images.md)
 
-<br>
+[**Python**](https://github.com/maim-lain/renpy/blob/master/notes/python.md)
 
-#### Python
-```renpy
-python:
-    flag = True
-    x = 10
-    
-$ flag = True
-$ x = 10
-```
-
-#### Init
-The init python statement runs Python at initialization time, before the game loads. Among other things, this can be used to define classes and functions, or to initialize styles, config variables, or persistent data.
-```renpy
-init python:
-    if persistent.endings is None:
-        persistent.endings = set()
-
-init 1 python:
-    # The bad ending is always unlocked.
-    persistent.endings.add("bad_ending")
-```
-
-Init python statements also take the hide or in clauses.
-
-Variables that have their value set in an init python block are not saved, loaded, and do not participate in rollback. Therefore, these variables should not be changed after init is over.
-
-
-<br>
-<br>
-
-#### While Statement
-```renpy
-$ count = 10
-
-while count > 0:
-    "T-minus [count]."
-    $ count -= 1
-
-"Liftoff!"
-```
-Ren'Py does not have continue, break, or for statements. Continue and break statements can be replaced by jumps to labels placed before or after the while loop, respectively. The first example of a while loop, above, shows how a while loop can replace a for statement.
-
-<br>
 <br>
 
 #### Music
@@ -87,32 +44,6 @@ pause
 
 pause 3.0
 ```
-
-<br>
-
-#### Menus, Labels, and Jumps
-The menu statement lets presents a choice to the player:
-```renpy
-menu:
-    "It's a videogame.":
-        jump game
-    "It's an interactive book.":
-        jump book
-
-label game:
-    m "It's a kind of videogame you can play on your computer or a console."
-    jump marry
-
-label book:
-    m "It's like an interactive book that you can read on a computer or a console."
-    jump marry
-
-label marry:
-    "And so, we become a visual novel creating duo."
-```
-In this example, each of the two menu choices runs a single jump statement. The jump statement transfers control to the a label defined using the label statement. After a jump, script statements following the label are run.
-
-If there is no jump statement at the end of the block associated with the label, Ren'Py will continue on to the next statement. The last jump statement here is technically unnecessary, but is included since it makes the flow of the game clearer.
 
 <br>
 
