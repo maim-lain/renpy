@@ -81,32 +81,15 @@ If the optional expression is given to return, it is evaluated, and it's result 
 <br>
 
 ## Labels & Control Flow Functions
-renpy.call_in_new_context(label, *args, **kwargs)
-
-This creates a new context, and then starts executing Ren'Py script from the given label in that context. Rollback is disabled in the new context, and saving/loading will occur in the top level context.
-
-This is used to begin a second interaction with the player Use this to begin a second interaction with the user while inside an interaction.
-
-<br>
-
-renpy.invoke_in_new_context(callable, *args, **kwargs)
-
-This function creates a new context, and invokes the given Python callable (function) in that context. When the function returns or raises an exception, control returns to the the original context. It's generally used to call a Python function that needs to display information to the player (like a confirmation prompt) from inside an event handler.
-
-A context maintains the state of the display (including what screens and images are being shown) and the audio system. Both are restored when the context returns.
-
-Additional arguments and keyword arguments are passed to the callable.
-
-A context created with this function cannot execute Ren'Py script. Functions that would change the flow of Ren'Py script, like renpy.jump(), are handled by the outer context. If you want to call Ren'Py script rather than a Python function, use renpy.call_in_new_context() instead.
-
-<br>
-
-renpy.jump_out_of_context(label)
-
-Causes control to leave the current context, and then to be transferred in the parent context to the given label.
-
-<br>
-
+- renpy.call_in_new_context(label, \*args, \*\*kwargs)
+  - This creates a new context, and then starts executing Ren'Py script from the given label in that context. Rollback is disabled in the new context, and saving/loading will occur in the top level context.
+  - This is used to begin a second interaction with the player Use this to begin a second interaction with the user while inside an interaction.
+- renpy.invoke_in_new_context(callable, \*args, \*\*kwargs)
+  - This function creates a new context, and invokes the given Python callable (function) in that context. When the function returns or raises an exception, control returns to the the original context. It's generally used to call a Python function that needs to display information to the player (like a confirmation prompt) from inside an event handler.
+  - A context maintains the state of the display (including what screens and images are being shown) and the audio system. Both are restored when the context returns.
+  - Additional arguments and keyword arguments are passed to the callable.
+  - A context created with this function cannot execute Ren'Py script. Functions that would change the flow of Ren'Py script, like renpy.jump(), are handled by the outer context. If you want to call Ren'Py script rather than a Python function, use renpy.call_in_new_context() instead.
+- renpy.jump_out_of_context(label)
+  - Causes control to leave the current context, and then to be transferred in the parent context to the given label.
 renpy.seen_label(label)
-
-Returns true if the named label has executed at least once on the current user's system, and false otherwise. This can be used to unlock scene galleries, for example.
+  - Returns true if the named label has executed at least once on the current user's system, and false otherwise. This can be used to unlock scene galleries, for example.
