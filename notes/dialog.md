@@ -3,7 +3,7 @@
 <br>
 
 - { } is for a text tag
-- \[ \] is for variable substitution
+- \[\] is for variable substitution
 
 <br>
 <br>
