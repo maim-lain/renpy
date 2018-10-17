@@ -3,57 +3,8 @@
 
 <br>
 
-#### Labels Statement
-Local labels logically reside inside the scope of the global label they are declared in. To declare a local label, prefix its name with a period .. For example:
-```renpy
-label global_label:
-    "Inside a global label.."
-    
-    label .local_name:
-        "inside a local label."
-```
+[**Labels and Control Flow**](https://github.com/maim-lain/renpy/blob/master/notes/labels.md)
 
-<br>
-
-Local labels can be referenced directly inside the same global label they are declared in or by their full name, consisting of global and local name parts:
-```renpy
-label another_global:
-    "Let's jump inside a local label located somewhere else."
-    jump global_label.local_name
-```
-
-<br>
-<br>
-
-#### Jump Statement
-The jump statement is used to transfer control to the given label.
-
-If the expression keyword is present, the expression following it is evaluated, and the string so computed is used as the label name of the statement to jump to. If the expression keyword is not present, the label name of the statement to jump to must be explicitly given.
-
-Unlike call, jump does not push the next statement onto a stack. As a result, there's no way to return to where you've jumped from.
-
-<br>
-<br>
-
-#### Call Statement
-The call statement is used to transfer control to the given label. It also pushes the next statement onto the call stack, allowing the return statement to return control to the statement following the call.
-
-If the optional from clause is present, it has the effect of including a label statement with the given name as the statement immediately following the call statement. An explicit label helps to ensure that saved games with return stacks can return to the proper place when loaded on a changed script.
-```renpy
-e "First, we will call a subroutine."
-call subroutine
-call subroutine(2)
-call expression "subroutine" pass (count=3)
-# ...
-
-label subroutine(count=1):
-    e "I came here [count] time(s)."
-    e "Next, we will return from the subroutine."
-
-    return
-```
-
-<br>
 <br>
 
 #### Python
