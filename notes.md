@@ -4,6 +4,7 @@
 <br>
 
 [**Labels and Control Flow**](https://github.com/maim-lain/renpy/blob/master/notes/labels.md)
+[**Dialog and Narration**](https://github.com/maim-lain/renpy/blob/master/notes/dialog.md)
 
 <br>
 
@@ -38,7 +39,7 @@ Variables that have their value set in an init python block are not saved, loade
 <br>
 
 #### While Statement
-```repny
+```renpy
 $ count = 10
 
 while count > 0:
@@ -48,16 +49,6 @@ while count > 0:
 "Liftoff!"
 ```
 Ren'Py does not have continue, break, or for statements. Continue and break statements can be replaced by jumps to labels placed before or after the while loop, respectively. The first example of a while loop, above, shows how a while loop can replace a for statement.
-
-<br>
-<br>
-
-The start label is special, as it's where Ren'Py scripts begin running when the user clicks "Start Game" on the main menu.
-
-#### Character
-```renpy
-define m = Character('Me', color="#c8c8ff")
-```
 
 <br>
 <br>
@@ -117,22 +108,6 @@ Images can be placed in subdirectories (subfolders) under the images directory. 
 Hide Statement. Ren'Py also supports a hide statement, which hides the given image.
 
 It's actually pretty rare that you'll need to use hide. Show can be used when a character is changing emotions, while scene is used when everyone leaves. You only need to use hide when a character leaves and the scene stays the same.
-
-<br>
-
-```renpy
-label start:
-    e mad "I'm a little upset at you."
-    e happy "But it's just a passing thing."
-```
-is equivalent to:
-```renpy
-label start:
-    show eileen mad
-    e "I'm a little upset at you."
-    show eileen happy
-    e "But it's just a passing thing."
-```
 
 <br>
 
