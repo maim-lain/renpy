@@ -90,16 +90,6 @@ pause 3.0
 
 <br>
 
-#### Ending the Game
-You can end the game by running the return statement, without having called anything. Before doing this, it's best to put something in the game that indicates that the game is ending, and perhaps giving the user an ending number or ending name.
-```renpy
-    "Good Ending."
-    return
-```
-That's all you need to make a kinetic novel, a game without any choices in it. Now, we'll look at what it takes to make a game that presents menus to the user.
-
-<br>
-
 #### Menus, Labels, and Jumps
 The menu statement lets presents a choice to the player:
 ```renpy
