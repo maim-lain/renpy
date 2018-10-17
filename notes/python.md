@@ -2,17 +2,14 @@
 
 <br>
 
-Multi-line python:
 ```renpy
+# Multi-line python:
 python:
     flag = True
     x = 10
-```
 
-<br>
 
-Single line python:
-```renpy
+# Single line python:
 $ flag = True
 $ x = 10
 ```
@@ -71,7 +68,7 @@ label after_load:
 ## Loops
 You can do any loop in Python, but can only do a while loop with Ren'Py.
 
-#### While Statement
+### While Statement
 ```renpy
 $ count = 10
 
