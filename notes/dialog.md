@@ -1,17 +1,17 @@
 # Dialog and Narration
 
+<br>
 
 ## Define a Character
 ```renpy
-define e = Character('Ellen', color="#c8c8ff", image="ellen")
+define e = Character("Ellen", color="#c8c8ff", image="ellen")
+define p = Character("[player_name]")
 ```
 
 <br>
 
 ## Say with Image Attributes
-When a character is defined with an associated image tag, say statement involving that character may have image attributes placed between the character name and the second string.
-
-In this form, if an image with the given tag is showing, Ren'Py will issue a show command involving the character tag and the attributes.
+When a character is defined with an associated image tag, the say statement involving that character may have image attributes placed between the character name and the second string.
 ```renpy
 label start:
     e mad "I'm a little upset at you."
