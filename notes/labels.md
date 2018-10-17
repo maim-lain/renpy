@@ -57,85 +57,56 @@ When doing "call expression" with an arguments list, the pass keyword must be in
 <br>
 <br>
 
+## Return Statement
+If the optional expression is given to return, it is evaluated, and it's result is stored in the \_return variable. This variable is dynamically scoped to each context.
 
+<br>
+<br>
 
+## Special Labels
+- start
+    - By default, Ren'Py jumps to this label when the game starts.
+- quit
+    - If it exists, this label is called in a new context when the user quits the game.
+- after_load
+    - If it exists, this label is called when a game is loaded. It can be use to fix data when the game is updated.
+- splashscreen
+    - If it exists, this label is called when the game is first run, before showing the main menu.
+- before_main_menu
+    - If it exists, this label is called before the main menu. It is used in rare cases to set up the main menu, for example by starting a movie playing in the background.
+- main_menu
+    - If it exists, this label is called instead of the main menu. If it returns, Ren'Py will start the game at the start label.
 
+<br>
+<br>
 
-Return Statement
-
-The return statement pops the top statement off of the call stack, and transfers control to it. If the call stack is empty, the return statement restarts Ren'Py, returning control to the main menu.
-
-If the optional expression is given to return, it is evaluated, and it's result is stored in the _return variable. This variable is dynamically scoped to each context.
-Special Labels
-
-The following labels are used by Ren'Py:
-
-start
-    By default, Ren'Py jumps to this label when the game starts.
-quit
-    If it exists, this label is called in a new context when the user quits the game.
-after_load
-    If it exists, this label is called when a game is loaded. It can be use to fix data when the game is updated.
-splashscreen
-    If it exists, this label is called when the game is first run, before showing the main menu.
-before_main_menu
-    If it exists, this label is called before the main menu. It is used in rare cases to set up the main menu, for example by starting a movie playing in the background.
-main_menu
-
-    If it exists, this label is called instead of the main menu. If it returns, Ren'Py will start the game at the start label. For example, the following will immediately start the game without displaying the main menu.
-
-    label main_menu:
-        return
-
-after_warp
-    If it is existed, this label is called after a warp but before the warped-to statement executes. Please see Warping to a line.
-
-Labels & Control Flow Functions
-
+## Labels & Control Flow Functions
 renpy.call_in_new_context(label, *args, **kwargs)
 
-    This creates a new context, and then starts executing Ren'Py script from the given label in that context. Rollback is disabled in the new context, and saving/loading will occur in the top level context.
+This creates a new context, and then starts executing Ren'Py script from the given label in that context. Rollback is disabled in the new context, and saving/loading will occur in the top level context.
 
-    This is used to begin a second interaction with the player Use this to begin a second interaction with the user while inside an interaction.
+This is used to begin a second interaction with the player Use this to begin a second interaction with the user while inside an interaction.
 
-renpy.get_all_labels()
-
-    Returns the set of all labels defined in the program, including labels defined for internal use in the libraries.
-
-renpy.get_return_stack()
-
-    Returns a list giving the current return stack. The return stack is a list of statement names.
-
-    The statement names will be strings (for labels), or opaque tuples (for non-label statements).
-
-renpy.has_label(name)
-
-    Returns true if name is a valid label the program, or false otherwise.
-
-    name
-        Should be a string to check for the existence of a label. It can also be an opaque tuple giving the name of a non-label statement.
+<br>
 
 renpy.invoke_in_new_context(callable, *args, **kwargs)
 
-    This function creates a new context, and invokes the given Python callable (function) in that context. When the function returns or raises an exception, control returns to the the original context. It's generally used to call a Python function that needs to display information to the player (like a confirmation prompt) from inside an event handler.
+This function creates a new context, and invokes the given Python callable (function) in that context. When the function returns or raises an exception, control returns to the the original context. It's generally used to call a Python function that needs to display information to the player (like a confirmation prompt) from inside an event handler.
 
-    A context maintains the state of the display (including what screens and images are being shown) and the audio system. Both are restored when the context returns.
+A context maintains the state of the display (including what screens and images are being shown) and the audio system. Both are restored when the context returns.
 
-    Additional arguments and keyword arguments are passed to the callable.
+Additional arguments and keyword arguments are passed to the callable.
 
-    A context created with this function cannot execute Ren'Py script. Functions that would change the flow of Ren'Py script, like renpy.jump(), are handled by the outer context. If you want to call Ren'Py script rather than a Python function, use renpy.call_in_new_context() instead.
+A context created with this function cannot execute Ren'Py script. Functions that would change the flow of Ren'Py script, like renpy.jump(), are handled by the outer context. If you want to call Ren'Py script rather than a Python function, use renpy.call_in_new_context() instead.
+
+<br>
 
 renpy.jump_out_of_context(label)
 
-    Causes control to leave the current context, and then to be transferred in the parent context to the given label.
+Causes control to leave the current context, and then to be transferred in the parent context to the given label.
+
+<br>
 
 renpy.seen_label(label)
 
-    Returns true if the named label has executed at least once on the current user's system, and false otherwise. This can be used to unlock scene galleries, for example.
-
-renpy.set_return_stack(stack)
-
-    Sets the current return stack. The return stack is a list of statement names.
-
-    Statement names may be strings (for labels) or opaque tuples (for non-label statements).
-
+Returns true if the named label has executed at least once on the current user's system, and false otherwise. This can be used to unlock scene galleries, for example.
