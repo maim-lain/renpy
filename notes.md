@@ -14,6 +14,10 @@
 
 <br>
 
+https://www.renpy.org/doc/html/#text-displayables-transforms-and-transitions
+
+<br>
+
 #### Pause Statement
 The pause statement causes Ren'Py to pause until the mouse is clicked. If a number is given, the pause will end when that number of seconds have elapsed.
 ```renpy
