@@ -11,29 +11,7 @@
 
 [**Python**](https://github.com/maim-lain/renpy/blob/master/notes/python.md)
 
-<br>
-
-#### Music
-The play music statement takes a filename that is interpreted as an audio file to play. Audio files should be in opus, ogg vorbis, or mp3 format.
-```renpy
-    play music "illurock.ogg"
-```
-When changing music, one can supply a fadeout and a fadein clause, which are used to fade out the old music and fade in the new music.
-```renpy
-    play music "illurock.ogg" fadeout 1.0 fadein 1.0
-```
-The queue music statement plays an audio file after the current file finishes playing.
-```renpy
-    queue music "next_track.opus"
-```
-Music can be stopped with the stop music statement, which can also optionally take a fadeout clause.
-```renpy
-    stop music
-```
-Sound effects can be played with the play sound statement. Unlike music, sound effects do not loop.
-```renpy
-    play sound "effect.ogg"
-```
+[**Audio**](https://github.com/maim-lain/renpy/blob/master/notes/audio.md)
 
 <br>
 
