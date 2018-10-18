@@ -17,7 +17,7 @@
 play music "illurock.ogg"
 
 
-# Unlike music sound effects do not loop
+# Sound effects do not loop
 play sound "effect.ogg"
 
 
