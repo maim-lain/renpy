@@ -11,6 +11,7 @@
 <br>
 <br>
 
+## Playing Audio
 ```renpy
 # The play music statement takes a filename that is interpreted as an audio file to play.
     play music "illurock.ogg"
@@ -32,7 +33,8 @@
 # The loop clause causes the music to loop, while noloop causes it to play only once.
 
 # A specified duration of silence can played using a filename like "<silence 3.0>",
-# where 3.0 is the number of seconds of silence that is desired. This can be used to delay the start of a sound file.
+# where 3.0 is the number of seconds of silence that is desired.
+# This can be used to delay the start of a sound file.
     play audio [ "<silence .5>", "boom.opus" ]
 ```
 
