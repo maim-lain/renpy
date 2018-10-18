@@ -2,8 +2,50 @@
 
 <br>
 
-- Text tag: { }
-- Variable substitution: \[ \]
+- \n = newline
+- { } = Text tag
+- \[ \] = Variable interpolation
+
+
+## Text Tags
+```renpy
+# {a} = hyperlink
+"Why don't you visit {a=https://renpy.org}Ren'Py's home page{/a}?"
+"The {a=call:elf_info}elves{/a} are a wise race."
+
+
+# {alpha} = text opacity
+"{alpha=0.1}This text is barely readable!{/alpha}"
+
+
+# bold and italic
+"Plain {b}Bold {i}Bold-Italic{/i} Bold{/b} Plain"
+
+
+# {color}
+"{color=#f00}Red{/color}, {color=#00ff00}Green{/color}, {color=#0000ffff}Blue{/color}"
+
+
+# {font}
+"Try out the {font=mikachan.ttf}mikachan font{/font}."
+
+
+# {k} = kerning
+"{k=-.5}Negative{/k} Normal {k=.5}Positive{/k}"
+
+
+# {s} = strikethrough
+"It's good {s}to see you{/s}."
+
+
+# {size}
+"{size=+10}Bigger{/size} {size=-10}Smaller{/size} {size=24}24 px{/size}."
+
+# {w} = wait
+# waits for the user to click to continue.
+# if it is given an argument the wait automatically ends after that many seconds.
+"Line 1{w} Line 1{w=1.0} Line 1"
+```
 
 <br>
 <br>
