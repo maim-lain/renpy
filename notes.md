@@ -1,5 +1,4 @@
 # RenPy
-- artstation animations
 
 <br>
 
@@ -41,7 +40,9 @@ Lines beginning with a dollar-sign are interpreted as Python statements. The ass
 
 #### Disable Quick Menu
 ```renpy
-# in screens.rpy change find and change to:
+# in screens.rpy find and change to:
 
 default quick_menu = False
 ```
+
+- artstation animations
