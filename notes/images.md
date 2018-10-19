@@ -290,7 +290,7 @@ hide text with Dissolve(1.0)
 <br>
 <br>
 
-### Displayables
+## Displayables
 A displayable is an object that can be shown to the user. Ren'Py displayables can be used in many ways.
 - Assignment to an image name using the image statement.
 - Added to a screen using the screen language add statement.
@@ -357,4 +357,60 @@ image sue = Placeholder("girl")
 label start:
      show sue angry
      "Sue" "How do you do? Now you gonna die!"
+```
+
+<br>
+<br>
+
+## Transforms
+A transform can be applied to a displayable to yield another displayable. The built-in transforms are used to control where an object is placed on the screen, while user-defined transforms can cause more complex effects, like motion, zoom, and rotation.
+
+Transforms can be applied by giving the at clause to the scene and show statements. Multiple transforms can be applied by separating them with commas. These transforms are applied from left-to-right, with the rightmost transform taking precedence in the case of conflicts.
+```renpy
+show eileen happy at right
+show eileen happy at halfsize, right
+```
+
+<br>
+
+#### Default Transforms
+- center
+  - Centers horizontally, and aligns to the bottom of the screen.
+- default
+  - Centers horizontally, and aligns to the bottom of the screen. This can be redefined to change the default placement of images shown with the show or scene statements.
+- left
+  - Aligns to the bottom-left corner of the screen.
+- offscreenleft
+  - Places the displayable off the left side of the screen, aligned to the bottom of the screen.
+- offscreenright
+  - Places the displayable off the left side of the screen, aligned to the bottom of the screen.
+- reset
+  - Resets the transform. Places the displayable in the top-left corner of the screen, and also eliminates any zoom, rotation, or other effects.
+- right
+  - Aligns to the bottom-right corner of the screen.
+- top
+  - Centers horizontally, and aligns to the top of the screen.
+- topleft
+  - Aligns to the top-left corner of the screen.
+- topright
+  - Aligns to the top-right corner of the screen.
+- truecenter
+  - Centers both horizontally and vertically.
+
+<br>
+
+```
++-----------------------------------------------------------+
+|topleft, reset               top                   topright|
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
+|                          truecenter                       |
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
+|left                   center, default                right|
++-----------------------------------------------------------+
 ```
