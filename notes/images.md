@@ -414,3 +414,45 @@ show eileen happy at halfsize, right
 |left                   center, default                right|
 +-----------------------------------------------------------+
 ```
+
+<br>
+<br>
+
+## Transitions
+Transitions can be used as part of the with statement, as well as in other parts of Ren'Py, to apply effects to changes in the scene. Ren'Py comes with a small number of pre-defined transitions, which can be given directly to the with statement. It also includes transition classes, which can be used to create new transitions.
+- fade
+  - Takes 0.5 seconds to fade to black, and then 0.5 seconds to fade to the new screen. An instance of the Fade() transition class.
+- dissolve
+  - Takes 0.5 seconds to dissolve from the old to the new screen. An instance of the Dissolve() transition class.
+- pixellate
+  - Pixellates the old scene for .5 seconds, and the new scene for another .5 seconds. An instance of the Pixellate() transition class.
+- move
+  - Takes 0.5 seconds to the move images that have changed location to their new locations. An instance of the MoveTransition() transition class.
+- moveinright, moveinleft, moveintop, moveinbottom
+  - These move entering images onto the screen from the appropriate side, taking 0.5 seconds to do so.
+- moveoutright, moveoutleft, moveouttop, moveoutbottom
+  - These move leaving images off the screen via the appropriate side, taking 0.5 seconds to do so.
+- ease, aseinright, easeinleft, easeintop, easeinbottom, easeoutright, easeoutleft, easeouttop, easeoutbottom
+  - These are similar to the move- family of transitions, except that they use a cosine-based curve to slow down the start and end of the transition.
+- zoomin, zoomout
+  - This zooms in entering images; zooms out leaving images; taking 0.5 seconds to do so.
+- zoominout
+  - This zooms in entering images and zooms out leaving images, taking 0.5 seconds to do so.
+- vpunch
+  - When invoked, this transition shakes the screen vertically for a quarter second.
+- hpunch
+  - When invoked, this transition shakes the screen horizontally for a quarter second.
+- blinds
+  - Transitions the screen in a vertical blinds effect lasting 1 second. An instance of the ImageDissolve() transition class.
+- squares
+  - Transitions the screen in a squares effect lasting 1 second.
+- wipeleft, wiperight, wipeup, wipedown
+  - Wipes the scene in the given direction. Instances of the CropMove() transition class.
+- slideleft, slideright, slideup, slidedown
+  - Slides the new scene in the given direction. Instances of the CropMove() transition class.
+slideawayleft, slideawayright, slideawayup, slideawaydown
+  - Slides the old scene in the given direction. Instances of the CropMove() transition class.
+pushright, pushleft, pushtop, pushbottom
+  - These use the new scene to slide the old scene out the named side. Instances of the PushMove() transition class.
+- irisin, irisout
+  - Use a rectangular iris to display the new screen, or hide the old screen. Instances of the CropMove() transition class.
