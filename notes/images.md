@@ -271,3 +271,18 @@ To do this repositioning, add an at clause to a show statement. The at clause ta
 - right for the right side
 - center for centered horizontally (the default)
 - truecenter for centered horizontally and vertically
+
+<br>
+<br>
+
+### Text Displayables
+```renpy
+show text "Hello, World" at truecenter with dissolve
+pause 1
+hide text with dissolve
+
+
+show text "The last thing you could remember was everything fading to white." at truecenter with fade
+pause 5
+hide text with Dissolve(1.0)
+```
