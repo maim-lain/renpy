@@ -4,7 +4,7 @@
 
 - \n = newline
 - { } = Text tag
-- \[ \] = Variable interpolation
+- \[_\] = Variable interpolation
 
 
 ## Text Tags
