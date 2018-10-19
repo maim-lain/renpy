@@ -14,7 +14,7 @@
 
 <br>
 
-https://www.renpy.org/doc/html/#text-displayables-transforms-and-transitions
+https://www.renpy.org/doc/html/#customizing-ren-py
 
 <br>
 
