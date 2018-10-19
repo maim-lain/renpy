@@ -456,3 +456,28 @@ pushright, pushleft, pushtop, pushbottom
   - These use the new scene to slide the old scene out the named side. Instances of the PushMove() transition class.
 - irisin, irisout
   - Use a rectangular iris to display the new screen, or hide the old screen. Instances of the CropMove() transition class.
+  
+<br>
+<br>
+
+## Animations
+```renpy
+init:
+    transform left_to_right:
+        xalign 0.0
+        linear 2.0 yalign 1.0
+        repeat
+        
+    image eileen animated:
+        "eileen_happy.png"
+        pause 1.0
+        "eileen_vhappy.png"
+        pause 1.0
+        repeat
+        
+    scene bg washington:
+        zoom 2.0
+
+    show eileen happy:
+        xalign 1.0
+```
