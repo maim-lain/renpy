@@ -286,3 +286,75 @@ show text "The last thing you could remember was everything fading to white." at
 pause 5
 hide text with Dissolve(1.0)
 ```
+
+<br>
+<br>
+
+### Displayables
+A displayable is an object that can be shown to the user. Ren'Py displayables can be used in many ways.
+- Assignment to an image name using the image statement.
+- Added to a screen using the screen language add statement.
+- Assignment to certain config variables.
+- Assignment to certain style properties.
+
+Strings may have one or more square-bracket substitutions in them, such as "eileen [mood]" or "eileen_[outfit]_[mood].png".
+
+<br>
+
+#### Applying Transforms to Displayables
+The At function produces a displayable from a displayable and one or more transforms.
+```renpy
+transform birds_transform:
+     xpos -200
+     linear 10 xpos 800
+     pause 20
+     repeat
+
+image birds = At("birds.png", birds_transform)
+```
+
+<br>
+
+#### Layout Boxes and Grids
+Layout boxes are displayables that lay out their children on the screen. They can lay out the children in a horizontal or vertical manner, or lay them out using the standard positioning algorithm.
+
+- Fixed(\*args, \*\*properties)
+  - A box that fills the screen. Its members are laid out from back to front, with their position properties controlling their position.
+- HBox(\*args, \*\*properties)
+  - A box that lays out its members from left to right.
+- VBox(\*args, \*\*properties)
+  - A layout that lays out its members from top to bottom.
+- layeredimage.Fixed(\*args, \*\*properties)
+  - A box that fills the screen. Its members are laid out from back to front, with their position properties controlling their position.
+- Grid(cols, rows, \*args, \*\*properties)
+  - Lays out displayables in a grid. The first two positional arguments are the number of columns and rows in the grid. This must be followed by columns * rows positional arguments giving the displayables that fill the grid.
+
+<br>
+
+```renpy
+# Display two logos, to the left and right of each other.
+image logo hbox = HBox("logo.png", "logo.png")
+
+# Display two logos, one on top of the other.
+image logo vbox = VBox("logo.png", "logo.png")
+
+# Display two logos. Since both default to the upper-left corner of the screen, we need to use Image to place
+# those logos on the screen.
+image logo fixed = Fixed(
+    Image("logo.png", xalign=0.0, yalign=0.0),
+    Image("logo.png", xalign=1.0, yalign=1.0))
+```
+
+<br>
+
+#### Placeholders
+The Placeholder displayable is used to display background or character images as appropriate. Placeholders are used automatically when an undefined image is used in developer mode. Placeholder displayables can also be used manually when the defaults are inappropriate.
+```renpy
+# Arguments: "boy", "girl", "bg"
+
+image sue = Placeholder("girl")
+
+label start:
+     show sue angry
+     "Sue" "How do you do? Now you gonna die!"
+```
