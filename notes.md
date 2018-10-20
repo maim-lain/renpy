@@ -49,4 +49,9 @@ Lines beginning with a dollar-sign are interpreted as Python statements. The ass
 default quick_menu = False
 ```
 
+#### Text color and cool text outline
+```renpy
+define gui.text_color = '#ffffff'
+define gui.dialogue_text_outlines = [ (0, "#000000", 2, 2) ]
+```
 - artstation animations
