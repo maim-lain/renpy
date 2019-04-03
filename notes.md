@@ -37,7 +37,13 @@ style mystyle_text:
 
 #### Imagebutton Animation
 ```renpy
-imagebutton idle "btn_idle.png" hover Transform("btn_play", easein=0.4, zoom=1.3)
+transform example:
+    on hover, idle:
+        easein 0.4 zoom 2.0
+        easein 0.4 zoom 1.0
+
+
+imagebutton idle "btn_idle.png" hover "btn_hover.png" at example
 ```
 
 <br>
