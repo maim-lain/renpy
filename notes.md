@@ -34,10 +34,37 @@ action Show("screen", fade)
 
 <br>
 
+#### Set style for every displayable on a screen
+```renpy
+screen example:
+    style_prefix "mystyle"
+
+    text "Line 1"
+    text "Line 2"
+    text "Line 3"
+
+style mystyle_text:
+    size 30
+```
+
+<br>
+
 #### Pop-up Notification
 ```renpy
 $ renpy.notify("This will create a pop-up notification.")
 ```
+
+<br>
+
+#### Auto-hide screens
+```renpy
+tag tag_name
+tag menu
+```
+
+
+
+
 
 <br>
 <br>
