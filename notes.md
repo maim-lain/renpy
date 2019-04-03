@@ -22,7 +22,7 @@
 
 #### Imagebutton Animation
 ```renpy
-imagebutton pos (0, 0) idle "btn_idle.png" hover Transform("btn_play", easein=0.4, zoom=1.3) action Start()
+imagebutton idle "btn_idle.png" hover Transform("btn_play", easein=0.4, zoom=1.3)
 ```
 
 <br>
@@ -39,9 +39,9 @@ action Show("screen", fade)
 $ renpy.notify("This will create a pop-up notification.")
 ```
 
-
-
-
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
