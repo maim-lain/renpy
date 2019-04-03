@@ -39,7 +39,7 @@ style mystyle_text:
 ```renpy
 transform example:
     on hover, idle:
-        easein 0.4 zoom 2.0
+        easein 0.4 zoom 1.5
         easein 0.4 zoom 1.0
 
 
