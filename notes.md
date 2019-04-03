@@ -22,7 +22,7 @@
 
 #### Imagebutton Animation
 ```renpy
-imagebutton pos (332, 1251) idle "btn_idle.png" hover Transform("btn_play", easein=0.4, zoom=1.3) action Start()
+imagebutton pos (0, 0) idle "btn_idle.png" hover Transform("btn_play", easein=0.4, zoom=1.3) action Start()
 ```
 
 <br>
