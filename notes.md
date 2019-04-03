@@ -20,20 +20,6 @@
 
 <br>
 
-#### Imagebutton Animation
-```renpy
-imagebutton idle "btn_idle.png" hover Transform("btn_play", easein=0.4, zoom=1.3)
-```
-
-<br>
-
-#### Screen Transition
-```renpy
-action Show("screen", fade)
-```
-
-<br>
-
 #### Set style for every displayable on a screen
 ```renpy
 screen example:
@@ -45,6 +31,20 @@ screen example:
 
 style mystyle_text:
     size 30
+```
+
+<br>
+
+#### Imagebutton Animation
+```renpy
+imagebutton idle "btn_idle.png" hover Transform("btn_play", easein=0.4, zoom=1.3)
+```
+
+<br>
+
+#### Screen Transition
+```renpy
+action Show("screen", fade)
 ```
 
 <br>
