@@ -13,6 +13,38 @@
 [**Audio**](https://github.com/maim-lain/renpy/blob/master/notes/audio.md)
 
 <br>
+<br>
+<br>
+
+## Useful RenPy Stuff
+
+<br>
+
+#### Imagebutton Animation
+```renpy
+imagebutton pos (332, 1251) idle "btn_idle.png" hover Transform("btn_play", easein=0.4, zoom=1.3) action Start()
+```
+
+<br>
+
+#### Screen Transition
+```renpy
+action Show("screen", fade)
+```
+
+<br>
+
+#### Pop-up Notification
+```renpy
+$ renpy.notify("This will create a pop-up notification.")
+```
+
+
+
+
+<br>
+<br>
+<br>
 
 https://www.renpy.org/doc/html/#customizing-ren-py
 
