@@ -68,6 +68,18 @@ tag tag_name
 tag menu
 ```
 
+<br>
+
+#### Fixed
+An invisible frame. (A frame without the background and borders)
+```renpy
+screen fast_travel:
+    fixed:
+         text "Fast travel to.." xalign 0.5 yalign 0.3
+         textbutton "Floor 1" xalign 0.25 yalign 0.5 action Jump("floor1")
+         textbutton "Floor 2" xalign 0.50 yalign 0.5 action Jump("floor2")
+         textbutton "Back" xalign 0.75 yalign 0.5 action Hide("fast_travel")
+```
 
 
 
