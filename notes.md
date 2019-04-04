@@ -46,6 +46,13 @@ transform example:
 imagebutton idle "btn_idle.png" hover "btn_hover.png" at example
 ```
 
+#### Transform() and im.MatrixColor()
+<br>
+
+```renpy
+imagebutton idle Transform("example.png", zoom=0.4) hover Transform(im.MatrixColor("example.png", im.matrix.brightness(0.20)), zoom=0.4)
+```
+
 <br>
 
 #### Screen Transition
