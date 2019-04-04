@@ -90,13 +90,16 @@ screen fast_travel:
 
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+---
 
 https://www.renpy.org/doc/html/#customizing-ren-py
 
