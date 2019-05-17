@@ -38,6 +38,18 @@ style mystyle_text:
 #### Imagebutton Animation
 ```renpy
 transform example:
+    on hover:
+        easein 0.3 zoom 1.2
+    on idle:
+        easein 0.3 zoom 1.0
+
+
+imagebutton align (0.5, 0.42) anchor (0.5, 0.5) idle "gui/btn_play.png" at example action NullAction()
+
+
+
+
+transform example:
     on hover, idle:
         easein 0.4 zoom 1.5
         easein 0.4 zoom 1.0
