@@ -20,6 +20,14 @@
 
 <br>
 
+#### Important! (1080p screen)
+```renpy
+imagebutton:
+    idle Fixed(Transform("image.png", size=(352, 198)), Color((0, 0, 0, 190)), mod_completed_text, maximum=(352, 198))
+```
+
+<br>
+
 #### Set style for every displayable on a screen
 ```renpy
 screen example:
