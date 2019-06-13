@@ -20,6 +20,17 @@
 
 <br>
 
+#### Button sounds
+```renpy
+# gui.rpy
+style button:
+    properties gui.button_properties("button")
+    hover_sound "sounds/hover.ogg"
+    activate_sound "sounds/click.ogg"
+```
+
+<br>
+
 #### Important! (1080p screen)
 ```renpy
 imagebutton:
