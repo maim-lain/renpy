@@ -20,6 +20,26 @@
 
 <br>
 
+#### Shake with black screen behind
+```renpy
+label start:
+    scene black with None
+    show my_image at vshake
+
+
+transform vshake:
+    linear 0.05 yoffset 0
+    linear 0.05 yoffset 10
+    linear 0.05 yoffset -10
+    linear 0.05 yoffset 10
+    linear 0.05 yoffset -10
+    linear 0.05 yoffset 10
+    linear 0.05 yoffset -10
+    linear 0.05 yoffset 0
+```
+
+<br>
+
 #### Button sounds
 ```renpy
 # gui.rpy
