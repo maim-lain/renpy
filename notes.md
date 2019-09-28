@@ -20,6 +20,43 @@
 
 <br>
 
+#### Right way to jump after doing menu choices
+```renpy
+menu my_menu:
+    "Choice 1" if not done_c1:
+        $ done_c1
+        jump my_menu
+    "Choice 2" if not done_c2:
+        $ done_c2
+        jump my_menu
+    "Choice 3" if not done_c3:
+        $ done_c3
+        jump my_menu
+
+jump after_menu
+
+
+
+
+# DO NOT DO:
+label my_label:
+    if done_c1 and done_c2 and done_c3:
+        jump after_menu
+
+    menu:
+        "Choice 1" if not done_c1:
+            $ done_c1
+            jump my_label
+        "Choice 2" if not done_c2:
+            $ done_c2
+            jump my_label
+        "Choice 3" if not done_c3:
+            $ done_c3
+            jump my_label
+```
+
+<br>
+
 #### Shake with black screen behind
 ```renpy
 label start:
