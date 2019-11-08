@@ -20,6 +20,18 @@
 
 <br>
 
+#### Android detection
+```renpy
+# Always use this one, Works on emulator
+renpy.variant("mobile"):
+
+
+# Doesn't work on emulator
+renpy.mobile:
+```
+
+<br>
+
 #### Right way to jump after doing menu choices
 ```renpy
 menu my_menu:
