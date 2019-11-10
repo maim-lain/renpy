@@ -20,6 +20,16 @@
 
 <br>
 
+#### Properly use italics and bold font
+```renpy
+init python:
+    config.font_replacement_map["fonts/DejaVuSans.ttf", False, True] = ("fonts/DejaVuSans-Italic.ttf", False, False)
+    config.font_replacement_map["fonts/DejaVuSans.ttf", True, False] = ("fonts/DejaVuSans-Bold.ttf", False, False)
+    config.font_replacement_map["fonts/DejaVuSans.ttf", True, True] = ("fonts/DejaVuSans-Bold-Italic.ttf", False, False)
+```
+
+<br>
+
 #### Android detection
 ```renpy
 # Always use this one, Works on emulator
