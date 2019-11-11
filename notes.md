@@ -28,6 +28,7 @@ config.predict_statements = 48
 config.image_cache_size_mb = 512
 
 
+# This has no effect on videos. Videos are never cached/preloaded/predicted.
 $ renpy.free_memory()
 
 
