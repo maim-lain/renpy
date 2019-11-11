@@ -29,8 +29,13 @@ config.image_cache_size_mb = 512
 $ renpy.free_memory()
 
 
+# Works best when doing it on the defined image animation. Doesn't work on video files.
+$ renpy.start_predict("aut_mast_sex")
+
+# These two don't work well (or at all?).
 $ renpy.start_predict("images/aut_mast_*.*") # Match files
 $ renpy.start_predict("aut_mast_*") # Match declared images
+
 $ renpy.stop_predict()
 ```
 
