@@ -20,6 +20,46 @@
 
 <br>
 
+#### Performance
+```renpy
+config.predict_statements = 48
+config.image_cache_size_mb = 512
+
+
+$ renpy.free_memory()
+
+
+$ renpy.start_predict("images/aut_mast_*.*") # Match files
+$ renpy.start_predict("aut_mast_*") # Match declared images
+$ renpy.stop_predict()
+```
+
+<br>
+
+#### Build
+```renpy
+build.archive("audio", "all")
+build.archive("images", "all")
+build.archive("scripts", "all")
+build.archive("videos", "all")
+
+
+# default exclusions here
+build.classify("game/**.rpy", None)
+
+
+build.classify("game/audio/**", "audio")
+
+build.classify("game/**.jpg", "images")
+build.classify("game/**.png", "images")
+
+build.classify("game/**.rpyc", "scripts")
+
+build.classify("game/videos/**", "videos")
+```
+
+<br>
+
 #### Properly use italics and bold font
 ```renpy
 init python:
