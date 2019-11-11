@@ -22,6 +22,8 @@
 
 #### Performance
 ```renpy
+# cache is VRAM not ram
+
 config.predict_statements = 48
 config.image_cache_size_mb = 512
 
