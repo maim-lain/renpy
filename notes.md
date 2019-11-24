@@ -20,6 +20,13 @@
 
 <br>
 
+#### Gallery Seen Label
+```renpy
+$ renpy.game.persistent._seen_ever["label_name"] = True
+```
+
+<br>
+
 #### Performance
 ```renpy
 # cache is VRAM not ram
