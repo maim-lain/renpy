@@ -20,6 +20,29 @@
 
 <br>
 
+#### Save a variable outside of the store
+```renpy
+# this resets variable on game restart, but not on load.
+# afterload lable probably only thing to reset on load and restart.
+
+# mymodule.py
+foo = "bar"
+
+
+# script.py
+init python:
+    import mymodule
+
+label start:
+    "[mymodule.foo]"
+    $ mymodule.foo = "asfsdf"
+    "[mymodule.foo]"
+    "save here"
+    "[mymodule.foo]"
+```
+
+<br>
+
 #### Gallery Seen Label
 ```renpy
 $ persistent._seen_ever["label_name"] = True
