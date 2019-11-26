@@ -20,7 +20,7 @@
 
 <br>
 
-#### How to fade out and in music at the same time
+#### Fade out and in music at the same time
 ```renpy
 play music "audio/music/loopster.mp3" loop fadeout 2.5 fadein 2.5
 
