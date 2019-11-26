@@ -20,6 +20,16 @@
 
 <br>
 
+#### How to fade out and in music at the same time
+```renpy
+play music "audio/music/loopster.mp3" loop fadeout 2.5 fadein 2.5
+
+# Fadeout gives the fadeout time for currently playing music in seconds,
+# while fadein gives the time it takes to fade in the new music.
+```
+
+<br>
+
 #### Save a variable outside of the store
 ```renpy
 # this resets variable on game restart, but not on load.
