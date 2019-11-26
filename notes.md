@@ -22,10 +22,16 @@
 
 #### Fade out and in music at the same time
 ```renpy
-play music "audio/music/loopster.mp3" loop fadeout 2.5 fadein 2.5
+play music "audio/music/song.mp3" loop fadeout 2.5 fadein 2.5
 
 # Fadeout gives the fadeout time for currently playing music in seconds,
 # while fadein gives the time it takes to fade in the new music.
+
+
+
+# Disables adding audio files as variables, which will save some memory since we aren't using the variables.
+init -1 python:
+    config.audio_directory = None
 ```
 
 <br>
