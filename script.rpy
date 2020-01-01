@@ -67,6 +67,7 @@ define CVirginity = False
 define fade = Fade(0.5, 2.0, 0.5)
 
 
+
 label start:
     "WARNING"
     "This game contains content of a sexual nature."
@@ -93,13 +94,8 @@ label start:
     "And minds are easily altered."
 
 
-    jump start2
 
-
-
-label start2:
-    $ name = renpy.input("What's your name?")
-    $ name = name.strip()
+    $ name = renpy.input("What's your name?").strip()
 
     "The world has been changed by the war..."
     "Hatred, vengeance, pride, love, everything and anything is a good reason to bring war upon a land."
@@ -109,31 +105,21 @@ label start2:
 
     "Will this ever change, will we one day be able to live in peace, every race, every mage?"
 
+
     menu:
         "What do you think [name]?"
-        "Our world deserves peace." :
-            $PeaceD1 = True
-            jump Peace
-        "Peace is unreachable, unreal." :
-            jump War
+
+        "Our world deserves peace.":
+            $ PeaceD1 = True
+            "You're thinking like a child, but maybe you're right."
+
+        "Peace is unreachable, unreal.":
+            "What a grim way to see your world, but maybe you're right."
 
 
+    "..."
 
-
-
-    label Peace:
-        "You're thinking like a child, but maybe you're right."
-        "..."
-        jump Next
-
-    label War:
-        "What a grim way to see your world, but maybe you're right."
-        "..."
-        jump Next
-
-    label Next:
-
-        stop music fadeout 1.0
+    stop music fadeout 1.0
 
     v "[name], [name] !"
     m "Uh.. what?"
@@ -141,14 +127,12 @@ label start2:
     play music "FilledLove.mp3"
 
     scene vanessawup1
-    image vanessawup1 = im.Scale("vanessawup1.png", 1920, 1080)
-
     v "Come on! We're gonna be late!"
     v "We don't want to be embarassed in front of the other races!"
     m "Alright, alright..."
     v "Thank you, I'll come back in 10 minutes."
-    scene black
 
+    scene black
     m "(Even though Vanessa is quite demanding, I am glad she's around. Since my parents died during the Great War, she became my family.)"
     m "(My only family...)"
     m "(I wonder what I would be without her, without her mother's help when I was younger.)"
@@ -156,129 +140,106 @@ label start2:
 
     "10 minutes later.."
 
-    hide vanessawup1
-
     scene vanessawup2
-    image vanessawup2 = im.Scale("vanessawup2.png", 1920, 1080)
-
-
-
     v "I'm so excited, we are the first generation of humans to be allowed to Receive the same education as the other races!"
-    menu :
+
+
+    menu:
         "Do I really care?"
+
         "I know right!":
-            jump excitement
-            $VLove += 1
+            m "I know, right! Finally we are able to show the world what we are capable of doing!"
+            v "I like your enthusiasm, come on, let's go!"
+            $ VLove += 1
+
         "I mean...":
-            jump nocare
+            scene vanessawup3
+            m "I mean, let's be honest Vanessa, do you truly expect things to change?"
+            v "They have to change, and if they don't we'll change them, quite being a spoilsport and let's get going!"
 
 
-    label excitement:
-        scene vanessawup2
-        image vanessawup2 = im.Scale("vanessawup2.png", 1920, 1080)
-        m "I know, right! Finally we are able to show the world what we are capable of doing!"
-        v "I like your enthusiasm, come on, let's go!"
+    scene black
+    v "What do you think they will teach us [name]?"
+    m "Hmm, I don't know maybe fire magic, arcane, frost ? the possibilities are endless!"
+    v "Indeed, I'm really impatient!"
 
-        jump Next2
+    scene VT1
+    image VT1 = im.Scale("VT1.png", 1920, 1080)
 
-    label nocare:
-        scene vanessawup3
-        image vanessawup3 = im.Scale("vanessawup3.png", 1920, 1080)
-        m "I mean, let's be honest Vanessa, do you truly expect things to change?"
-        v "They have to change, and if they don't we'll change them, quite being a spoilsport and let's get going!"
-        jump Next2
+    v "Here we are.."
+    m "Indeed.."
+    v "..."
 
-    label Next2:
-        scene black
+    m "..."
 
-        v "What do you think they will teach us [name]?"
-        m "Hmm, I don't know maybe fire magic, arcane, frost ? the possibilities are endless!"
-        v "Indeed, I'm really impatient!"
+    scene VT2
+    image VT2 = im.Scale ("VT2.png", 1920, 1080)
+    with fade
 
-        hide vanessaawup2
+    v "W-well I guess we should try to-"
+    with hpunch
+    e "Look Chumee, humans!"
 
-        scene VT1
-        image VT1 = im.Scale("VT1.png", 1920, 1080)
+    scene EC
+    image EC = im.Scale ("EC.png", 1920,1080)
+    with fade
 
-        v "Here we are.."
-        m "Indeed.."
-        v "..."
+    e "I've never seen any of your kind here!"
+    c "Calm down Elise, let them breathe."
+    e "You're right, forgive my enthusiasm, I just am really curious about your kind."
 
-        m "..."
+    scene black fade
+    scene EC Intro
+    image EC Intro = im.Scale ("EC Intro.png", 1920, 1080)
+    with fade
 
-        scene VT2
-        image VT2 = im.Scale ("VT2.png", 1920, 1080)
-        with fade
-
-        v "W-well I guess we should try to-"
-        with hpunch
-        e "Look Chumee, humans!"
-
-        scene EC
-        image EC = im.Scale ("EC.png", 1920,1080)
-        with fade
-
-        e "I've never seen any of your kind here!"
-        c "Calm down Elise, let them breathe."
-        e "You're right, forgive my enthusiasm, I just am really curious about your kind."
-
-        scene black fade
-        scene EC Intro
-        image EC Intro = im.Scale ("EC Intro.png", 1920, 1080)
-        with fade
-
-        e "I am Elise, I have been studying fire magic since my birth now !"
-        e "I am 129-"
-        with hpunch
-        v " 129 ?! How can you be that old with such a young and beautiful face ?"
-        e " Oh well, we elves don't age the same as you, I've always found sad that you humans can't live beyond 100 years old."
-        e " If I'm right, in human years I am about ... 19 years old !"
-        v " Oh I see, I'm Vanessa, I'm 20..."
-        c " I'm Chumee, Chumee Grunbog, and I'm a Goblin... I mean I don't think you know any other race with that height and skin, I'm 19 years old as well."
-        e " Glad to meet you Vanessa, and who is the person with you ?"
-
-        menu :
-            "How should I introduce myself "
-            "Be polite":
-                $ELove += 1
-                jump Polite
-            "Be relaxed":
-                $CLove += 1
-                jump relaxed
+    e "I am Elise, I have been studying fire magic since my birth now !"
+    e "I am 129-"
+    with hpunch
+    v " 129 ?! How can you be that old with such a young and beautiful face ?"
+    e " Oh well, we elves don't age the same as you, I've always found sad that you humans can't live beyond 100 years old."
+    e " If I'm right, in human years I am about ... 19 years old !"
+    v " Oh I see, I'm Vanessa, I'm 20..."
+    c " I'm Chumee, Chumee Grunbog, and I'm a Goblin... I mean I don't think you know any other race with that height and skin, I'm 19 years old as well."
+    e " Glad to meet you Vanessa, and who is the person with you ?"
 
 
+    menu:
+        "How should I introduce myself "
 
-    label Polite:
-        m "The name is [name], I'm 20. Vanessa is a good friend, and I'm quite curious about everyone here."
-        e "You seem calm [name], that will help here, I look forward to learning more about you!"
-        c "Don't be afraid about being relaxed about it, you seem like a nice guy"
-        jump next3
+        "Be polite":
+            $ELove += 1
+            m "The name is [name], I'm 20. Vanessa is a good friend, and I'm quite curious about everyone here."
+            e "You seem calm [name], that will help here, I look forward to learning more about you!"
+            c "Don't be afraid about being relaxed about it, you seem like a nice guy"
 
-    label relaxed:
-        m "I'm [name], 20. Vanessa is a good friend, and I'm quite curious about everyone here."
-        c "You sure know how to breath [name], I like it."
-        e "I'm glad that we can all be so easygoing that early."
-        jump next3
+        "Be relaxed":
+            $CLove += 1
+            m "I'm [name], 20. Vanessa is a good friend, and I'm quite curious about everyone here."
+            c "You sure know how to breath [name], I like it."
+            e "I'm glad that we can all be so easygoing that early."
 
-    label next3:
-        scene black fade
-        scene EC Talk
-        image EC Talk = im.Scale("EC Talk.png", 1920,1080)
 
-        e "We should probably get going"
-        v "I agree, we should start visiting, [name]"
+    scene black fade
+    scene EC Talk
+    image EC Talk = im.Scale("EC Talk.png", 1920,1080)
 
-        e "Well me and Chumee can give you the tour, we've been around for a few hours now."
-        m "Sure I could use some help, this place seems enormous!"
+    e "We should probably get going"
+    v "I agree, we should start visiting, [name]"
 
-        if ELove >= 1:
-            jump EliseV
+    e "Well me and Chumee can give you the tour, we've been around for a few hours now."
+    m "Sure I could use some help, this place seems enormous!"
 
-        elif CLove >= 1:
-            jump ChumeeV
+    if ELove >= 1:
+        jump EliseV
 
-        else:
-            return
+    elif CLove >= 1:
+        jump ChumeeV
+
+    else:
+        return
+
+
 
     label EliseV:
 
@@ -5136,7 +5097,7 @@ label dinner:
         with fade
         v "Oh [name]!"
         v "You're back!"
-        c "You definitly took your sweet time big guy."
+        c "You definitely took your sweet time big guy."
         m "Well."
         l "So you got that bastard kicked out and the Academy is giving you their best girls to compensate for the loss?"
         scene black
@@ -5372,7 +5333,7 @@ label QD4OM:
                 "They feel oddly similar to a cat."
                 "Weird."
                 o "Happy now?"
-                mi "I definitly am."
+                mi "I definitely am."
                 m "Yeah, your hair are really soft it's a bit weird."
                 jump QD4OM
         "Do you know Helirios?":
@@ -6556,7 +6517,7 @@ label NightD4:
                 doc "I would gladly take you back here, and take care of you every day."
                 scene vid DI2
                 doc "I'm done playing, now I want you to mess my face with your juices!"
-                "The doc goes faster, she definitly knows what she's doing."
+                "The doc goes faster, she definitely knows what she's doing."
                 doc "I can feel you're close!"
                 doc "finish on my face!"
                 doc "I want to feel your human seeds against my skin!"
@@ -7253,7 +7214,7 @@ label NightD4:
         e "We both used to flee there when the guards became annoying, it was, our little corner."
         m "Perhaps we will be able to see it again!"
         scene d5hs5
-        e "Definitly!"
+        e "definitely!"
         e "Hmm, my father might have hidden some hints there too, although..."
         scene d5hs8
         e "I can't remember where it is precisely."
@@ -7525,7 +7486,7 @@ label NightD4:
         with fade
         h "I still can't believe all that changed since I met you."
         h "Learning that my memories were changed is... sometimes troubling."
-        h "But I definitly remember Marcus, perhaps we should use the grimoire again!"
+        h "But I definitely remember Marcus, perhaps we should use the grimoire again!"
         m "Why?"
         scene d5h10
         h "Well... Elise told you you had an access any time."
@@ -7839,7 +7800,7 @@ label NightD4:
 
 
         scene d6m35
-        h "You definitly seem to admire him."
+        h "You definitely seem to admire him."
         if CLove >= 9:
             c "Seems like I will have to share him with you~"
             v "W-What I-I"
@@ -8363,4 +8324,71 @@ label Endingupdate:
 
 
 
+    return
+
+
+
+
+
+
+label gal_elise_1:
+    if _in_replay:
+        $ name = persistent.gallery_name
+
+    scene black with dissolve
+    "..." with vpunch
+
+    scene vid
+    with fade
+    m "Elise... I-I love you!"
+    e "I love you too [name]"
+    e "I wanted this to happen for so long!"
+    e "Just you and me, connected..."
+    e "Relax now, it's just the two of us."
+    e "Let me take care of you..."
+    "..."
+    scene black
+    scene EWup1
+    image EWup1 = im.Scale ("EWup1.png", 1920, 1080)
+    with hpunch
+
+    e "Wh..What..."
+    scene black
+    scene EWup2
+    image EWup2 = im.Scale ("EWup2.png", 1920, 1080)
+    with fade
+    e "What a ...mmm... Dream."
+    e "... [name]..."
+
+    scene black with dissolve
+    $ renpy.end_replay()
+    return
+
+
+
+label gal_chumee_1:
+    if _in_replay:
+        $ name = persistent.gallery_name
+
+    scene black with dissolve
+    "..." with vpunch
+
+    scene black
+    c "Fuck... this heat is fucking unbearable..."
+    scene vid A
+    c "I can't breath for 5 minutes without.. ah fuck! Needing that."
+    c "It's ... fucking annoying, and yet it feels so good..."
+    c "... Fuck ... [name]... I want... you..."
+    c "... I need something... or else I'm gonna go crazy..."
+    c "Shit! I can feel it coming!"
+
+    scene vid B
+    c "Ffffuuuucck..."
+    c "..."
+    c "Fuck... that was..."
+    c "Intense..."
+    c "I need... [name]..."
+
+    scene black with dissolve
+    $ renpy.end_replay()
     return
