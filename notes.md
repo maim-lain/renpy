@@ -20,6 +20,13 @@
 
 <br>
 
+#### Search RenPy GitHub without useless results
+```
+search terms -path:launcher/game/tl -path:the_question -path:the_question_old -path:tutorial
+```
+
+<br>
+
 #### Fade out and in music at the same time
 ```renpy
 play music "audio/music/song.mp3" loop fadeout 2.5 fadein 2.5
